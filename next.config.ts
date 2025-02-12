@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  output: "standalone",
   // Other Next.js configuration options can go here
 };
 
