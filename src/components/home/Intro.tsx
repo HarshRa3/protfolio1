@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
+import Link from "next/link";
+
 
 const Intro:React.FC = () => {
   return (
@@ -41,9 +43,11 @@ const Intro:React.FC = () => {
           transition={{ delay: 1.5, duration: 0.8 }}
           className="mt-6"
         >
+          <Link target="_blank" href={'/Harsh_Rastogi_Resume.pdf'} >
           <button className="bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-2xl transform transition-transform hover:scale-110">
             Learn More About Me
           </button>
+          </Link>
         </motion.div>
       </motion.div>
     </div>

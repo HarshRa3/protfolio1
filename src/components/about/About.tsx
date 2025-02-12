@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import HarshImg from "../../assests/images/harshphoto.jpg";
 import ServiceCard from "./aboutCards/ServiceCard";
 import ContactUsCard from "./aboutCards/CotactsUsCard";
+import Link from "next/link";
 
 const About:React.FC = () => {
   return (
@@ -70,14 +71,17 @@ const About:React.FC = () => {
             <ServiceCard title="Web Development" />
             <ServiceCard title="Mobile Development" />
           </motion.div>
+          <Link           href={"mailto:harshrastogi396@gmail.com"} >
           <motion.button
             className="mt-6 px-6 py-3 bg-gradient-to-r from-green-400 to-blue-600 text-white font-bold rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2 }}
-          >
+            
+            >
             Get in Touch
           </motion.button>
+            </Link>
         </motion.div>
 
 
