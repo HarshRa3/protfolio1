@@ -86,7 +86,6 @@ export const ProjectsData = [
       "Tailwind CSS",
     ],
   },
-  ,
   {
     img: DocGenesys.src,
     title: "DocGenesys",
