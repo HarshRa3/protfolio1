@@ -12,6 +12,8 @@ import NodeJSIcon from "../../public/SkillIcon/nodejs.svg";
 import ExpressJSIcon from "../../public/SkillIcon/expressjs.svg";
 import MongoDbIcon from "../../public/SkillIcon/mongodb.svg";
 import Portfolio from "../../public/ExperienceImg/image.png";
+import DocGenesys from "../../public/ExperienceImg/docGenesys.png";
+import IDM from "../../public/ExperienceImg/IDM.png";
 
 export const SkillStaticData = [
   {
@@ -72,6 +74,27 @@ export const SkillStaticData = [
 
 export const ProjectsData = [
   {
+    img: IDM.src,
+    title: "IDM (DMS)",
+    desc: "IDM is a Document management System. It is a Product where User Can manage any type of Document like- (pdf, img, MS Docs etc)",
+    url: "https://main.dcjhso1bgs7vu.amplifyapp.com/",
+    techStack: [
+      "React JS",
+      "MUI",
+      "Framer Motion",
+      "React Hook Form",
+      "Tailwind CSS",
+    ],
+  },
+  ,
+  {
+    img: DocGenesys.src,
+    title: "DocGenesys",
+    desc: "DocGenesys is a subpart of document management system (DMS) designed to transform the way businesses handle critical documentation.",
+    url: "https://docgenesys.com/",
+    techStack: ["React JS", "MUI", "Framer Motion"],
+  },
+  {
     img: "https://harshrastogi.netlify.app/assets/AlignXImg-CMC2ynLK.png",
     title: "AlignX",
     desc: "A client-facing web app built with React.js, Redux Toolkit, and Material UI, offering a seamless user experience",
@@ -84,6 +107,14 @@ export const ProjectsData = [
     desc: "An Admin Dashboard created with Next.js and Material UI for user authentication and data management.",
     url: "https://github.com/HarshRa3/userAuthentication-typescript/tree/branch1",
     techStack: ["HTML", "CSS", "Tailwind CSS", "Next JS", "MUI", "Formik"],
+  },
+
+  {
+    img: Portfolio.src,
+    title: "Portfolio",
+    desc: "A personal portfolio showcasing my web development skills, built with React.js and Material UI.",
+    url: "https://harshrastogi.netlify.app/",
+    techStack: ["React JS", "MUI"],
   },
   {
     img: "https://harshrastogi.netlify.app/assets/PollImg-CpYD1VOM.png",
@@ -98,12 +129,5 @@ export const ProjectsData = [
     desc: "A CRUD Todo app built with React.js and Material UI, using Redux Toolkit for state management.",
     url: "https://todoappf.netlify.app/",
     techStack: ["React JS", "MUI", "Redux/Tookit", "Formik"],
-  },
-  {
-    img: Portfolio.src,
-    title: "Portfolio",
-    desc: "A personal portfolio showcasing my web development skills, built with React.js and Material UI.",
-    url: "https://harshrastogi.netlify.app/",
-    techStack: ["React JS", "MUI"],
   },
 ];
