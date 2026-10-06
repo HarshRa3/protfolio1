@@ -2,26 +2,15 @@ import React from 'react';
 
 const FooterRight: React.FC = () => {
   return (
-    <div className="text-center lg:text-right">
-      <h2
-        className="text-xl font-semibold text-white"
-        data-aos="fade-left"
-        data-aos-duration="1000"
-      >
-        Contact
-      </h2>
-      <div
-        className="mt-4 text-gray-400 space-y-2"
-        data-aos="fade-left"
-        data-aos-delay="100"
-      >
-        {/* <p>123, Tech Street</p>
-        <p>City, Country</p> */}
-        <p>Phone: +91 79837 21010</p>
-        <p>Email: harshrastogi396@gmail.com</p>
+    <div className="flex flex-col items-center md:items-end text-center md:text-right space-y-2">
+      <h3 className="text-sm font-semibold text-slate-200 uppercase tracking-wider">Direct Contact</h3>
+      <div className="text-xs text-slate-400 space-y-1">
+        <p>Email: <a href="mailto:harshrastogi396@gmail.com" className="hover:text-indigo-400 transition-colors">harshrastogi396@gmail.com</a></p>
+        <p>Phone: <a href="tel:+917983721010" className="hover:text-indigo-400 transition-colors">+91 79837 21010</a></p>
       </div>
     </div>
   );
 };
 
 export default FooterRight;
+

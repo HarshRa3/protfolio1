@@ -1,41 +1,47 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Cpu } from 'lucide-react';
 
 const SkillLeftCon: React.FC = () => {
   return (
     <motion.div
-      className="text-center md:text-left"
-      initial={{ opacity: 0, y: -50 }}
+      className="text-left space-y-4"
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.4 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.3 }}
     >
-      <motion.h3
-        className="text-3xl font-bold text-indigo-400"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.2 }}
-      >
-        Dive Into My Expertise
-      </motion.h3>
-      <motion.h4
-        className="text-3xl font-semibold text-pink-500 mt-2"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.4 }}
-      >
-        Skills & Experience
-      </motion.h4>
-      <motion.p
-        className="mt-6 text-lg text-gray-300 leading-relaxed"
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.6 }}
-      >
-        I possess a deep understanding of React, Next.js, JavaScript, and Express, with a focus on creating high-performance, responsive, and scalable web applications.
-      </motion.p>
+      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-400 uppercase tracking-wider">
+        <Cpu size={14} />
+        <span>Technical Arsenal</span>
+      </div>
+      
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Modern Tech Stack & <span className="gradient-text">Core Competencies</span>
+      </h2>
+      
+      <p className="text-slate-400 text-base leading-relaxed">
+        Leveraging modern frameworks, tools, and best practices to build fast, reliable, and scalable web and mobile applications from scratch to deployment.
+      </p>
+
+      <div className="pt-2 space-y-2">
+        <div className="flex items-center gap-2 text-sm text-slate-300">
+          <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
+          <span>Frontend Development (React, Next.js, Tailwind CSS)</span>
+        </div>
+        <div className="flex items-center gap-2 text-sm text-slate-300">
+          <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
+          <span>Mobile App Development (React Native)</span>
+        </div>
+        <div className="flex items-center gap-2 text-sm text-slate-300">
+          <span className="h-1.5 w-1.5 rounded-full bg-pink-400" />
+          <span>Backend & Database (Node.js, Express, MongoDB)</span>
+        </div>
+      </div>
     </motion.div>
   );
 };
 
 export default SkillLeftCon;
+

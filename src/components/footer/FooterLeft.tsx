@@ -1,32 +1,21 @@
 import React from 'react';
-import { FaCode } from 'react-icons/fa';
+import { Code2 } from 'lucide-react';
 
 const FooterLeft: React.FC = () => {
   return (
-    <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-      <div
-        className="p-5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full shadow-lg hover:scale-110 transform transition-transform duration-300 animate-pulse"
-        data-aos="zoom-in"
-        data-aos-duration="1000"
-      >
-        <FaCode size={28} className="text-white" />
+    <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-3">
+      <div className="flex items-center gap-2 font-bold text-lg text-white">
+        <div className="p-1.5 rounded-lg bg-gradient-to-tr from-indigo-500 to-purple-500 text-white">
+          <Code2 size={18} />
+        </div>
+        <span>Harsh <span className="text-indigo-400">Rastogi</span></span>
       </div>
-      <h2
-        className="mt-4 text-lg font-semibold text-gray-200"
-        data-aos="fade-right"
-        data-aos-delay="100"
-      >
-        Harsh Rastogi
-      </h2>
-      <p
-        className="text-gray-400 text-sm mt-2"
-        data-aos="fade-right"
-        data-aos-delay="200"
-      >
-        Passionate about building clean, efficient, and impactful code.
+      <p className="text-slate-400 text-xs sm:text-sm max-w-sm leading-relaxed">
+        Full Stack Web & Mobile App Developer committed to building clean, scalable, and impactful digital solutions.
       </p>
     </div>
   );
 };
 
 export default FooterLeft;
+

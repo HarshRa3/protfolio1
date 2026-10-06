@@ -5,23 +5,23 @@ import ProjectCon from '@/components/projects/ProjectCon';
 import SkillsCom from '@/components/skill/SkillsCom';
 import { Metadata } from 'next';
 import React from 'react';
+
 export const metadata: Metadata = {
-  title: "Harsh Rastogi-Home",
-  description: "A Portfolio With my better designing Skills",
+  title: "Harsh Rastogi | Full Stack & Mobile Developer",
+  description: "Personal Portfolio of Harsh Rastogi - Full Stack Web & Mobile App Developer showcasing projects, skills, and experience.",
 };
 
-const page:React.FC = () => {
-
-  
+const HomePage: React.FC = () => {
   return (
-    <>
-      <Intro/>
-      <About/>
-      <SkillsCom/>
-      <ProjectCon/>
-      <ContactCon/>
-    </>
+    <div className="space-y-12">
+      <Intro />
+      <About />
+      <SkillsCom />
+      <ProjectCon />
+      <ContactCon />
+    </div>
   );
 };
 
-export default page;
+export default HomePage;
+

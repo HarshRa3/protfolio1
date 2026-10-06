@@ -14,6 +14,8 @@ import MongoDbIcon from "../../public/SkillIcon/mongodb.svg";
 import Portfolio from "../../public/ExperienceImg/image.png";
 import DocGenesys from "../../public/ExperienceImg/docGenesys.png";
 import IDM from "../../public/ExperienceImg/IDM.png";
+import StarEnablerImg from "../../public/ExperienceImg/starenabler.webp";
+import BSquareImg from "../../public/ExperienceImg/bsquare.png";
 
 export const SkillStaticData = [
   {
@@ -56,12 +58,10 @@ export const SkillStaticData = [
     name: "GITHUB",
     icon: GitIcon,
   },
-
   {
     name: "Express JS",
     icon: ExpressJSIcon,
   },
-
   {
     name: "Node JS",
     icon: NodeJSIcon,
@@ -74,59 +74,76 @@ export const SkillStaticData = [
 
 export const ProjectsData = [
   {
+    img: StarEnablerImg.src,
+    title: "Star Enabler",
+    desc: "An e-commerce seller account management & growth platform empowering brands to scale on Amazon, Flipkart, Meesho, & global marketplaces.",
+    url: "https://starenabler.com/",
+    techStack: [
+      "Next.js",
+      "React JS",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Node.js",
+    ],
+  },
+  {
+    img: BSquareImg.src,
+    title: "BSquare IT Solutions",
+    desc: "Enterprise IT solutions, cloud services & digital transformation portal featuring cloud metrics, IT services, and interactive dashboards.",
+    url: "https://bsquaress.com/",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Chart.js",
+      "GSAP",
+    ],
+  },
+  {
     img: IDM.src,
-    title: "IDM (DMS)",
-    desc: "IDM is a Document management System. It is a Product where User Can manage any type of Document like- (pdf, img, MS Docs etc)",
-    url: "https://main.dcjhso1bgs7vu.amplifyapp.com/",
+    title: "Docgenesys",
+    desc: "A Document Management System designed for enterprises to upload, organize, search, and manage PDFs, MS Docs, and files securely.",
+    url: "http://sandbox.docgenesys.com/",
     techStack: [
       "React JS",
       "MUI",
-      "Framer Motion",
-      "React Hook Form",
       "Tailwind CSS",
+      "React Hook Form",
     ],
   },
   {
     img: DocGenesys.src,
     title: "DocGenesys",
-    desc: "DocGenesys is a subpart of document management system (DMS) designed to transform the way businesses handle critical documentation.",
+    desc: "A core module of Document Management System transforming business documentation with automated workflow features.",
     url: "https://docgenesys.com/",
-    techStack: ["React JS", "MUI", "Framer Motion"],
+    techStack: ["React JS", "MUI", "Tailwind CSS"],
   },
   {
     img: "https://harshrastogi.netlify.app/assets/AlignXImg-CMC2ynLK.png",
     title: "AlignX",
-    desc: "A client-facing web app built with React.js, Redux Toolkit, and Material UI, offering a seamless user experience",
+    desc: "A client-facing web application built with React.js, Redux Toolkit, and Material UI for streamlined client interaction.",
     url: "https://alignxupdated.netlify.app/",
-    techStack: ["React JS", "MUI", "Redux/Tookit", "Formik"],
+    techStack: ["React JS", "MUI", "Redux Toolkit", "Formik"],
   },
   {
     img: "https://harshrastogi.netlify.app/assets/AdminDashboard-BxNtANgr.png",
     title: "Admin Dashboard",
-    desc: "An Admin Dashboard created with Next.js and Material UI for user authentication and data management.",
+    desc: "A full-featured Admin Dashboard with user authentication, data management, and responsive analytics widgets.",
     url: "https://github.com/HarshRa3/userAuthentication-typescript/tree/branch1",
-    techStack: ["HTML", "CSS", "Tailwind CSS", "Next JS", "MUI", "Formik"],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "MUI"],
   },
-
   {
     img: Portfolio.src,
-    title: "Portfolio",
-    desc: "A personal portfolio showcasing my web development skills, built with React.js and Material UI.",
+    title: "Personal Portfolio",
+    desc: "Personal portfolio website built with modern web technologies, showcasing skills, experience, and key projects.",
     url: "https://harshrastogi.netlify.app/",
-    techStack: ["React JS", "MUI"],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
     img: "https://harshrastogi.netlify.app/assets/PollImg-CpYD1VOM.png",
     title: "Poll Management",
-    desc: "A React.js app for creating and managing polls with full CRUD functionality, powered by Redux Toolkit",
+    desc: "A React.js application for creating, managing, and tracking polls with real-time state management using Redux Toolkit.",
     url: "https://pollmangement.netlify.app/",
-    techStack: ["React JS", "MUI", "Redux/Tookit", "Formik"],
-  },
-  {
-    img: "https://harshrastogi.netlify.app/assets/todo-jSiN1psC.png",
-    title: "Todo App",
-    desc: "A CRUD Todo app built with React.js and Material UI, using Redux Toolkit for state management.",
-    url: "https://todoappf.netlify.app/",
-    techStack: ["React JS", "MUI", "Redux/Tookit", "Formik"],
+    techStack: ["React JS", "MUI", "Redux Toolkit", "Formik"],
   },
 ];

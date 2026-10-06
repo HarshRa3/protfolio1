@@ -1,9 +1,10 @@
 import SkillsCom from "@/components/skill/SkillsCom";
 import { Metadata } from "next";
 import React from "react";
+
 export const metadata: Metadata = {
-  title: "Harsh Rastogi-Slills",
-  description: "A Portfolio Slills Page With better design",
+  title: "Skills | Harsh Rastogi",
+  description: "Explore technical skills, languages, frameworks, and core capabilities of Harsh Rastogi.",
 };
 
 const Skills: React.FC = () => {
@@ -11,3 +12,4 @@ const Skills: React.FC = () => {
 };
 
 export default Skills;
+

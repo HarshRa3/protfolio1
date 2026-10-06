@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/Header/NavBar";
-import bgImg from "../assests/bgimg/bgimage.jpg";
 import Footer from "@/components/footer/Footer";
 
 const geistSans = Geist({
@@ -17,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Harsh Rastogi",
-  description: "A Portfolio With my better designing Skills",
+  title: "Harsh Rastogi | Full Stack Developer",
+  description: "Portfolio of Harsh Rastogi - Full Stack Developer specializing in React, Next.js, Node.js, and Mobile Apps.",
 };
 
 export default function RootLayout({
@@ -27,37 +26,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      {/* <head>
-        <link rel="icon" href={`${Icon}`} />
-      </head> */}
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        cz-shortcut-listen="true"
- data-new-gr-c-s-check-loaded="14.1222.0"
-        data-gr-ext-installed=""
-        className={`${geistSans.variable} ${geistMono.variable} bg-cover bg-fixed antialiased flex flex-col  w-[100%] overflow-x-hidden overflow-y-auto `}
-        style={{
-          backgroundImage: `
-            linear-gradient(
-              rgba(0, 0, 0, 0.5), 
-              rgba(0, 0, 0, 0.5)
-            ), 
-            url(${bgImg.src})
-          `,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          // display:'flex',
-          // flexDirection:'column',
-          // justifyContent:"space-between",
-          minHeight:"100vh",
-          overflow:'auto'
-        }}
+      data-new-gr-c-s-check-loaded="14.1334.0"
+        className={`${geistSans.variable} ${geistMono.variable} bg-[#090d16] text-slate-100 antialiased flex flex-col min-h-screen relative selection:bg-indigo-500/30 selection:text-indigo-200`}
       >
-        <NavBar />
-          {children}
-        
-        <Footer />
+        {/* Subtle Ambient Background Gradients */}
+        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+          <div className="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/15 rounded-full blur-[120px]" />
+          <div className="absolute top-1/3 -right-40 w-96 h-96 bg-purple-600/15 rounded-full blur-[120px]" />
+          <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-cyan-600/10 rounded-full blur-[120px]" />
+        </div>
+
+        <div className="relative z-10 flex flex-col min-h-screen">
+          <NavBar />
+          <main className="flex-grow pt-20">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
 }
+

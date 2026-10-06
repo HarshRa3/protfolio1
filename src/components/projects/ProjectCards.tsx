@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 
 interface ProjectCardsProps {
   imageSrc: string;
@@ -11,7 +12,7 @@ interface ProjectCardsProps {
   techStack: string[];
   url: string;
   index: number;
-};
+}
 
 const ProjectCards: React.FC<ProjectCardsProps> = ({
   imageSrc,
@@ -23,95 +24,62 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
 }) => {
   return (
     <motion.div
-      className="relative w-[340px] h-[500px] bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-xl shadow-2xl overflow-hidden group"
-      whileHover={{
-        scale: 1.07,
-        rotateY: 10,
-        rotateX: 5,
-        boxShadow: "0px 20px 50px rgba(0, 0, 0, 0.6)",
-      }}
-      initial={{ opacity: 0, y: 50 }}
+      className="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col h-full border border-slate-800/80 group transition-all duration-200"
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        type: "spring",
-        stiffness: 150,
-        duration: 0.8,
-        delay: index * 0.4,
-      }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.25, delay: (index % 3) * 0.08 }}
     >
-      {/* Parallax Image Section */}
-      <motion.div
-        className="w-full h-[65%] relative overflow-hidden rounded-t-xl"
-        whileHover={{
-          scale: 1.1,
-          transition: { type: "spring", stiffness: 100 },
-        }}
-      >
+      {/* Project Image Header */}
+      <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-900">
         <Image
           src={imageSrc}
           alt={title}
           fill
-          className="object-cover transition-all duration-500 group-hover:scale-110"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-      </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#090d16] via-transparent to-transparent opacity-80" />
+      </div>
 
-      {/* Content Section */}
-      <div className="absolute bottom-0 w-full bg-gradient-to-t from-black via-transparent to-transparent p-6">
-        {/* Title with hover animation */}
-        <motion.h2
-          className="text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-600 to-pink-500 mb-3 tracking-wide"
-          initial={{ color: "#4B5563" }} // Dark gray color
-          whileHover={{ scale: 1.1, color: "#3b82f6" }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          {title}
-        </motion.h2>
+      {/* Content Body */}
+      <div className="p-6 flex flex-col flex-grow justify-between gap-4">
+        <div className="space-y-2">
+          <div className="flex items-center justify-between gap-2">
+            <h3 className="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+              {title}
+            </h3>
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
+            {description}
+          </p>
+        </div>
 
-        {/* Description with fade-in effect */}
-        <motion.p
-          className="text-sm text-gray-300 mb-4 line-clamp-3"
-          initial={{ opacity: 0, color: "#9CA3AF" }} // Light gray color for description
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          {description}
-        </motion.p>
+        {/* Tech Stack Tags */}
+        <div className="space-y-4 pt-2">
+          <div className="flex flex-wrap gap-1.5">
+            {techStack.map((tech, i) => (
+              <span
+                key={i}
+                className="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-md bg-slate-900/90 text-indigo-300 border border-slate-800"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
 
-        {/* Tech Stack with hover effect */}
-        <motion.div
-          className="flex flex-wrap gap-2"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          {techStack.map((tech, index) => (
-            <motion.span
-              key={index}
-              className="text-xs font-medium text-white bg-gradient-to-r from-indigo-400 via-purple-600 to-pink-500 rounded-full px-3 py-1 shadow-md hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-600 transform transition duration-300"
-              whileHover={{
-                scale: 1.2,
-                boxShadow: "0px 10px 20px rgba(37, 99, 235, 0.3)",
-              }}
+          {/* Action Link */}
+          <div className="pt-2 border-t border-slate-800/60 flex items-center justify-between">
+            <Link
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors group/link"
             >
-              {tech}
-            </motion.span>
-          ))}
-        </motion.div>
-
-        <div className="mt-6">
-          <Link href={url} target="new">
-            <motion.button
-              whileHover={{
-                scale: 1.1,
-                backgroundColor: "#1D4ED8", // blue-600
-                boxShadow: "0px 12px 24px rgba(29, 78, 216, 0.5)",
-                rotate: 5,
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 text-sm font-bold text-white bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg shadow-lg hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-800 transition-all duration-300"
-            >
-              View Project
-            </motion.button>
-          </Link>
+              <span>View Project Live</span>
+              <ExternalLink size={14} className="transition-transform group-hover/link:translate-x-0.5" />
+            </Link>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -119,3 +87,4 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
 };
 
 export default ProjectCards;
+

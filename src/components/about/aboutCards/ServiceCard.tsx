@@ -1,24 +1,19 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 
-const ServiceCard: React.FC<{ title: string }> = ({ title }) => {
+const ServiceCard: React.FC<{ title: string; desc?: string }> = ({ title, desc }) => {
   return (
-    <div className="p-6 flex flex-col items-center justify-center gap-6 text-xl font-semibold border-2 border-gray-700 rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r from-yellow-500 via-orange-600 to-red-600 text-white transition-all duration-300 ease-in-out transform">
-      {/* Icon Circle */}
-      <div className="bg-white text-yellow-600 p-6 rounded-full shadow-lg flex items-center justify-center">
-        <FaCheck className="text-4xl" />
+    <div className="glass-card glass-card-hover p-6 rounded-2xl flex flex-col gap-3 items-start text-left group border border-slate-800/80">
+      <div className="p-3 rounded-xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-200">
+        <FaCheck className="text-lg" />
       </div>
-
-      {/* Title */}
-      <h1 className="text-center font-bold text-xl text-white">{title}</h1>
-
-      {/* Optional description */}
-      <p className="text-center text-sm text-white opacity-80">
-        Providing high-quality services tailored to your needs, ensuring
-        satisfaction and excellence.
+      <h3 className="font-bold text-lg text-white group-hover:text-indigo-300 transition-colors">{title}</h3>
+      <p className="text-sm text-slate-400 leading-relaxed">
+        {desc || "Delivering scalable, high-performance digital solutions tailored to modern business requirements."}
       </p>
     </div>
   );
 };
 
 export default ServiceCard;
+

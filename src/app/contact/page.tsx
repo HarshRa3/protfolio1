@@ -3,13 +3,13 @@ import { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: "Harsh Rastogi-Contact",
-  description: "A Portfolio Contact Page With better design",
-};
-const page:React.FC = () => {
-  return (
-    <ContactCon/>
-  );
+  title: "Contact | Harsh Rastogi",
+  description: "Get in touch with Harsh Rastogi for full-stack web and mobile application development projects.",
 };
 
-export default page;
+const ContactPage: React.FC = () => {
+  return <ContactCon />;
+};
+
+export default ContactPage;
+
