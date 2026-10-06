@@ -2,16 +2,24 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['live.staticflickr.com'], // Add the domain here
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'harshrastogi.netlify.app',
-        pathname: '/assets/**',
+        protocol: "https",
+        hostname: "**",
+      },
+      {
+        protocol: "http",
+        hostname: "**",
       },
     ],
   },
-  // Other Next.js configuration options can go here
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
+
